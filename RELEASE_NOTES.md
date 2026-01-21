@@ -2,11 +2,11 @@
 
 ## Version 1.0.0 - Initial Release (2026-01-21)
 
-First stable release of TUnit.AutoFixture - a streamlined, xUnit-compatible AutoFixture integration for TUnit.
+First stable release of TestSuite.TUnit.AutoFixture - a streamlined, xUnit-compatible AutoFixture integration for TUnit.
 
 ### Features
 
-#### Core Library (TUnit.AutoFixture)
+#### Core Library (TestSuite.TUnit.AutoFixture)
 
 - **`[AutoData]` Attribute** - Automatically generates all test method parameters using AutoFixture
   - Supports primitives, complex types, collections, enums, and nested objects
@@ -29,7 +29,7 @@ First stable release of TUnit.AutoFixture - a streamlined, xUnit-compatible Auto
   - `[InlineAutoData]` instead of `[AutoArguments]`
   - Identical API to AutoFixture.Xunit2
 
-#### NSubstitute Integration (TUnit.AutoFixture.NSubstitute)
+#### NSubstitute Integration (TestSuite.TUnit.AutoFixture.NSubstitute)
 
 - **`[AutoNSubstituteData]` Attribute** - Automatically mocks interfaces using NSubstitute
   - Combines auto-mocking with auto-generated test data
@@ -74,8 +74,8 @@ First stable release of TUnit.AutoFixture - a streamlined, xUnit-compatible Auto
 
 - **Comprehensive README Files**
   - Root README with quick start and feature comparison
-  - TUnit.AutoFixture README with detailed usage guide
-  - TUnit.AutoFixture.NSubstitute README with mocking examples
+  - TestSuite.TUnit.AutoFixture README with detailed usage guide
+  - TestSuite.TUnit.AutoFixture.NSubstitute README with mocking examples
 
 - **XML Documentation** - Complete IntelliSense support
   - All public APIs documented
@@ -90,13 +90,13 @@ First stable release of TUnit.AutoFixture - a streamlined, xUnit-compatible Auto
 
 ### Dependencies
 
-#### TUnit.AutoFixture
+#### TestSuite.TUnit.AutoFixture
 - TUnit.Core 1.10.0
 - AutoFixture 4.18.1
 - .NET 10.0
 
-#### TUnit.AutoFixture.NSubstitute
-- TUnit.AutoFixture 1.0.0
+#### TestSuite.TUnit.AutoFixture.NSubstitute
+- TestSuite.TUnit.AutoFixture 1.0.0
 - AutoFixture.AutoNSubstitute 4.18.1
 - NSubstitute 5.1.0
 - .NET 10.0
@@ -113,7 +113,7 @@ First stable release of TUnit.AutoFixture - a streamlined, xUnit-compatible Auto
 
 **Minimal changes required:**
 1. Change `[Theory]` to `[Test]`
-2. Update using statements from `AutoFixture.Xunit2` to `TUnit.AutoFixture`
+2. Update using statements from `AutoFixture.Xunit2` to `TestSuite.TUnit.AutoFixture`
 3. All attribute names remain identical
 
 #### From Official AutoFixture.TUnit
@@ -125,7 +125,7 @@ First stable release of TUnit.AutoFixture - a streamlined, xUnit-compatible Auto
 
 ### Comparison with Official AutoFixture.TUnit
 
-| Aspect | Official Implementation | TUnit.AutoFixture |
+| Aspect | Official Implementation | TestSuite.TUnit.AutoFixture |
 |--------|-------------------------|-------------------|
 | **Internal Classes** | 20+ classes | 6-8 classes |
 | **Primary Attribute** | `AutoDataSourceAttribute` | `AutoDataAttribute` |
@@ -138,21 +138,21 @@ First stable release of TUnit.AutoFixture - a streamlined, xUnit-compatible Auto
 
 **NuGet Package Manager:**
 ```powershell
-Install-Package TUnit.AutoFixture
-Install-Package TUnit.AutoFixture.NSubstitute
+Install-Package TestSuite.TUnit.AutoFixture
+Install-Package TestSuite.TUnit.AutoFixture.NSubstitute
 ```
 
 **dotnet CLI:**
 ```bash
-dotnet add package TUnit.AutoFixture
-dotnet add package TUnit.AutoFixture.NSubstitute
+dotnet add package TestSuite.TUnit.AutoFixture
+dotnet add package TestSuite.TUnit.AutoFixture.NSubstitute
 ```
 
 ### Quick Start Example
 
 ```csharp
-using TUnit.AutoFixture;
-using TUnit.AutoFixture.NSubstitute;
+using TestSuite.TUnit.AutoFixture;
+using TestSuite.TUnit.AutoFixture.NSubstitute;
 using TUnit.Core;
 using NSubstitute;
 using FluentAssertions;
@@ -211,5 +211,5 @@ Planned for future releases:
 ---
 
 For detailed usage documentation, see:
-- [TUnit.AutoFixture README](TUnit.AutoFixture/README.md)
-- [TUnit.AutoFixture.NSubstitute README](TUnit.AutoFixture.NSubstitute/README.md)
+- [TestSuite.TUnit.AutoFixture README](TestSuite.TUnit.AutoFixture/README.md)
+- [TestSuite.TUnit.AutoFixture.NSubstitute README](TestSuite.TUnit.AutoFixture.NSubstitute/README.md)

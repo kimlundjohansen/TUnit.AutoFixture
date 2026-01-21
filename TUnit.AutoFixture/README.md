@@ -1,11 +1,11 @@
-# TUnit.AutoFixture
+# TestSuite.TUnit.AutoFixture
 
 Core library for auto-generating test data in TUnit using AutoFixture.
 
 ## Installation
 
 ```bash
-dotnet add package TUnit.AutoFixture
+dotnet add package TestSuite.TUnit.AutoFixture
 ```
 
 ## Features
@@ -23,7 +23,7 @@ dotnet add package TUnit.AutoFixture
 The `[AutoData]` attribute automatically generates all test parameters using AutoFixture:
 
 ```csharp
-using TUnit.AutoFixture;
+using TestSuite.TUnit.AutoFixture;
 using TUnit.Core;
 
 [Test]
@@ -489,11 +489,11 @@ public enum Matching
 
 ## Examples
 
-See the [test project](../TUnit.AutoFixture.UnitTests/Examples/) for comprehensive examples:
+See the [test project](../TestSuite.TUnit.AutoFixture.UnitTests/Examples/) for comprehensive examples:
 
-- **[BasicAutoDataTests.cs](../TUnit.AutoFixture.UnitTests/Examples/BasicAutoDataTests.cs)** - Basic auto-generation patterns
-- **[FrozenDependencyTests.cs](../TUnit.AutoFixture.UnitTests/Examples/FrozenDependencyTests.cs)** - All matching strategies
-- **[InlineAutoDataTests.cs](../TUnit.AutoFixture.UnitTests/Examples/InlineAutoDataTests.cs)** - Inline data combinations
+- **[BasicAutoDataTests.cs](../TestSuite.TUnit.AutoFixture.UnitTests/Examples/BasicAutoDataTests.cs)** - Basic auto-generation patterns
+- **[FrozenDependencyTests.cs](../TestSuite.TUnit.AutoFixture.UnitTests/Examples/FrozenDependencyTests.cs)** - All matching strategies
+- **[InlineAutoDataTests.cs](../TestSuite.TUnit.AutoFixture.UnitTests/Examples/InlineAutoDataTests.cs)** - Inline data combinations
 
 ## Requirements
 

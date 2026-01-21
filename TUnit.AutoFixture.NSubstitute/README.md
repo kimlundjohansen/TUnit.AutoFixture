@@ -1,15 +1,15 @@
-# TUnit.AutoFixture.NSubstitute
+# TestSuite.TUnit.AutoFixture.NSubstitute
 
-NSubstitute auto-mocking integration for TUnit.AutoFixture.
+NSubstitute auto-mocking integration for TestSuite.TUnit.AutoFixture.
 
 ## Installation
 
 ```bash
-dotnet add package TUnit.AutoFixture.NSubstitute
+dotnet add package TestSuite.TUnit.AutoFixture.NSubstitute
 ```
 
 This package automatically includes:
-- TUnit.AutoFixture (core library)
+- TestSuite.TUnit.AutoFixture (core library)
 - AutoFixture.AutoNSubstitute
 - NSubstitute
 
@@ -28,7 +28,7 @@ This package automatically includes:
 The `[AutoNSubstituteData]` attribute automatically mocks all interfaces:
 
 ```csharp
-using TUnit.AutoFixture.NSubstitute;
+using TestSuite.TUnit.AutoFixture.NSubstitute;
 using TUnit.Core;
 using NSubstitute;
 
@@ -478,15 +478,15 @@ To mock concrete classes with virtual members, use `Substitute.ForPartsOf<T>()` 
 
 ## Examples
 
-See the [test project](../TUnit.AutoFixture.UnitTests/Examples/) for comprehensive examples:
+See the [test project](../TestSuite.TUnit.AutoFixture.UnitTests/Examples/) for comprehensive examples:
 
-- **[AutoNSubstituteTests.cs](../TUnit.AutoFixture.UnitTests/Examples/AutoNSubstituteTests.cs)** - All auto-mocking scenarios
+- **[AutoNSubstituteTests.cs](../TestSuite.TUnit.AutoFixture.UnitTests/Examples/AutoNSubstituteTests.cs)** - All auto-mocking scenarios
 
 ## Requirements
 
 - .NET 10.0 or later
 - TUnit.Core 1.10.0 or later
-- TUnit.AutoFixture 1.0.0 or later
+- TestSuite.TUnit.AutoFixture 1.0.0 or later
 - AutoFixture.AutoNSubstitute 4.18.1 or later
 - NSubstitute 5.1.0 or later
 

@@ -1,11 +1,11 @@
-# TUnit.AutoFixture
+# TestSuite.TUnit.AutoFixture
 
 A streamlined, xUnit-compatible AutoFixture integration for TUnit - the modern .NET testing framework.
 
-[![Build Status](https://github.com/kimlundjohansen/TUnit.AutoFixture/workflows/CI/badge.svg)](https://github.com/kimlundjohansen/TUnit.AutoFixture/actions)
-[![NuGet](https://img.shields.io/nuget/v/TUnit.AutoFixture.svg)](https://www.nuget.org/packages/TUnit.AutoFixture/)
-[![NuGet Downloads](https://img.shields.io/nuget/dt/TUnit.AutoFixture.svg)](https://www.nuget.org/packages/TUnit.AutoFixture/)
-[![GitHub Release](https://img.shields.io/github/v/release/kimlundjohansen/TUnit.AutoFixture)](https://github.com/kimlundjohansen/TUnit.AutoFixture/releases)
+[![Build Status](https://github.com/kimlundjohansen/TestSuite.TUnit.AutoFixture/workflows/CI/badge.svg)](https://github.com/kimlundjohansen/TestSuite.TUnit.AutoFixture/actions)
+[![NuGet](https://img.shields.io/nuget/v/TestSuite.TUnit.AutoFixture.svg)](https://www.nuget.org/packages/TestSuite.TUnit.AutoFixture/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/TestSuite.TUnit.AutoFixture.svg)](https://www.nuget.org/packages/TestSuite.TUnit.AutoFixture/)
+[![GitHub Release](https://img.shields.io/github/v/release/kimlundjohansen/TestSuite.TUnit.AutoFixture)](https://github.com/kimlundjohansen/TestSuite.TUnit.AutoFixture/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -20,8 +20,35 @@ A streamlined, xUnit-compatible AutoFixture integration for TUnit - the modern .
 
 | Package | Description | NuGet |
 |---------|-------------|-------|
-| **TUnit.AutoFixture** | Core library for auto-generating test data | [![NuGet](https://img.shields.io/nuget/v/TUnit.AutoFixture.svg)](https://www.nuget.org/packages/TUnit.AutoFixture/) |
-| **TUnit.AutoFixture.NSubstitute** | NSubstitute auto-mocking integration | [![NuGet](https://img.shields.io/nuget/v/TUnit.AutoFixture.NSubstitute.svg)](https://www.nuget.org/packages/TUnit.AutoFixture.NSubstitute/) |
+| **TestSuite.TUnit.AutoFixture** | Core library for auto-generating test data | [![NuGet](https://img.shields.io/nuget/v/TestSuite.TUnit.AutoFixture.svg)](https://www.nuget.org/packages/TestSuite.TUnit.AutoFixture/) |
+| **TestSuite.TUnit.AutoFixture.NSubstitute** | NSubstitute auto-mocking integration | [![NuGet](https://img.shields.io/nuget/v/TestSuite.TUnit.AutoFixture.NSubstitute.svg)](https://www.nuget.org/packages/TestSuite.TUnit.AutoFixture.NSubstitute/) |
+
+## Latest Release
+
+**Version 1.0.0** - Initial Stable Release (2026-01-21)
+
+### What's New in 1.0.0
+
+- ✅ **[AutoData]** attribute for automatic test data generation
+- ✅ **[InlineAutoData]** for combining explicit and auto-generated parameters
+- ✅ **[Frozen]** attribute with 5 matching strategies (ExactType, ImplementedInterfaces, DirectBaseType, BaseType, MemberOfFamily)
+- ✅ **NSubstitute integration** with [AutoNSubstituteData] and [InlineAutoNSubstituteData]
+- ✅ **xUnit-compatible naming** - seamless migration from xUnit.AutoFixture
+- ✅ **Zero warnings** - strict StyleCop and SonarAnalyzer compliance
+- ✅ **48 passing tests** - comprehensive test coverage with FluentAssertions
+- ✅ **Multi-platform CI/CD** - automated testing on Ubuntu, Windows, and macOS
+- ✅ **.NET 10.0** support
+
+### Download
+
+```bash
+dotnet add package TestSuite.TUnit.AutoFixture --version 1.0.0
+dotnet add package TestSuite.TUnit.AutoFixture.NSubstitute --version 1.0.0
+```
+
+📦 [View on NuGet](https://www.nuget.org/packages/TestSuite.TUnit.AutoFixture/1.0.0)
+📝 [Full Release Notes](RELEASE_NOTES.md)
+🏷️ [GitHub Release](https://github.com/kimlundjohansen/TestSuite.TUnit.AutoFixture/releases/tag/v1.0.0)
 
 ## Latest Release
 
@@ -56,16 +83,16 @@ dotnet add package TUnit.AutoFixture.NSubstitute --version 1.0.0
 
 ```bash
 # Core library
-dotnet add package TUnit.AutoFixture
+dotnet add package TestSuite.TUnit.AutoFixture
 
 # With NSubstitute support
-dotnet add package TUnit.AutoFixture.NSubstitute
+dotnet add package TestSuite.TUnit.AutoFixture.NSubstitute
 ```
 
 ### Basic Usage
 
 ```csharp
-using TUnit.AutoFixture;
+using TestSuite.TUnit.AutoFixture;
 using TUnit.Core;
 
 public class MyTests
@@ -109,7 +136,7 @@ public class MyTests
 ### With NSubstitute
 
 ```csharp
-using TUnit.AutoFixture.NSubstitute;
+using TestSuite.TUnit.AutoFixture.NSubstitute;
 using TUnit.Core;
 using NSubstitute;
 
@@ -134,17 +161,17 @@ public class MyMockTests
 
 ## Documentation
 
-- **[TUnit.AutoFixture Documentation](TUnit.AutoFixture/README.md)** - Core library usage guide
-- **[TUnit.AutoFixture.NSubstitute Documentation](TUnit.AutoFixture.NSubstitute/README.md)** - NSubstitute integration guide
+- **[TestSuite.TUnit.AutoFixture Documentation](TestSuite.TUnit.AutoFixture/README.md)** - Core library usage guide
+- **[TestSuite.TUnit.AutoFixture.NSubstitute Documentation](TestSuite.TUnit.AutoFixture.NSubstitute/README.md)** - NSubstitute integration guide
 - **[Release Notes](RELEASE_NOTES.md)** - Version history and changes
 
-## Why TUnit.AutoFixture?
+## Why TestSuite.TUnit.AutoFixture?
 
 ### xUnit Compatibility
 
 If you're migrating from xUnit, you can use the **exact same attribute names**:
 
-| xUnit.AutoFixture | TUnit.AutoFixture | Status |
+| xUnit.AutoFixture | TestSuite.TUnit.AutoFixture | Status |
 |-------------------|-------------------|--------|
 | `[AutoData]` | `[AutoData]` | ✅ Identical |
 | `[InlineAutoData]` | `[InlineAutoData]` | ✅ Identical |
@@ -155,7 +182,7 @@ No need to learn new attribute names or refactor your tests!
 
 ### Simpler Architecture
 
-| Aspect | Official AutoFixture.TUnit | TUnit.AutoFixture |
+| Aspect | Official AutoFixture.TUnit | TestSuite.TUnit.AutoFixture |
 |--------|---------------------------|-------------------|
 | Core Classes | 20+ internal classes | 6-8 core classes |
 | Primary Attribute | `AutoDataSourceAttribute` | `AutoDataAttribute` |
@@ -193,7 +220,7 @@ public class MyTests
 
 ```csharp
 // After (TUnit)
-using TUnit.AutoFixture;
+using TestSuite.TUnit.AutoFixture;
 using TUnit.Core;
 
 public class MyTests
@@ -222,8 +249,8 @@ public void Test(string param) { }
 ```
 
 ```csharp
-// After (TUnit.AutoFixture)
-using TUnit.AutoFixture;
+// After (TestSuite.TUnit.AutoFixture)
+using TestSuite.TUnit.AutoFixture;
 
 [Test]
 [AutoData]  // xUnit-compatible name
@@ -232,12 +259,12 @@ public void Test(string param) { }
 
 ## Examples
 
-See the [test project](TUnit.AutoFixture.UnitTests/Examples/) for comprehensive examples:
+See the [test project](TestSuite.TUnit.AutoFixture.UnitTests/Examples/) for comprehensive examples:
 
-- **[BasicAutoDataTests.cs](TUnit.AutoFixture.UnitTests/Examples/BasicAutoDataTests.cs)** - Primitives, complex types, collections
-- **[FrozenDependencyTests.cs](TUnit.AutoFixture.UnitTests/Examples/FrozenDependencyTests.cs)** - All 5 matching strategies
-- **[InlineAutoDataTests.cs](TUnit.AutoFixture.UnitTests/Examples/InlineAutoDataTests.cs)** - Hybrid explicit/auto data
-- **[AutoNSubstituteTests.cs](TUnit.AutoFixture.UnitTests/Examples/AutoNSubstituteTests.cs)** - Auto-mocking scenarios
+- **[BasicAutoDataTests.cs](TestSuite.TUnit.AutoFixture.UnitTests/Examples/BasicAutoDataTests.cs)** - Primitives, complex types, collections
+- **[FrozenDependencyTests.cs](TestSuite.TUnit.AutoFixture.UnitTests/Examples/FrozenDependencyTests.cs)** - All 5 matching strategies
+- **[InlineAutoDataTests.cs](TestSuite.TUnit.AutoFixture.UnitTests/Examples/InlineAutoDataTests.cs)** - Hybrid explicit/auto data
+- **[AutoNSubstituteTests.cs](TestSuite.TUnit.AutoFixture.UnitTests/Examples/AutoNSubstituteTests.cs)** - Auto-mocking scenarios
 
 ## Requirements
 
@@ -252,8 +279,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ### Building from Source
 
 ```bash
-git clone https://github.com/kimlundjohansen/TUnit.AutoFixture.git
-cd TUnit.AutoFixture
+git clone https://github.com/kimlundjohansen/TestSuite.TUnit.AutoFixture.git
+cd TestSuite.TUnit.AutoFixture
 dotnet restore
 dotnet build
 dotnet test
