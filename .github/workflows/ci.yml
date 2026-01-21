@@ -69,9 +69,14 @@ jobs:
 
     - name: Check for warnings
       run: |
-        if dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore 2>&1 | grep -i "warning"; then
+        BUILD_OUTPUT=$(dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore 2>&1)
+        # Check for actual warning lines (e.g., "warning CS1234:" or "warning:"), not the summary
+        if echo "$BUILD_OUTPUT" | grep -E "warning [A-Z]+[0-9]+:" | grep -v "0 Warning(s)"; then
           echo "Build contains warnings!"
+          echo "$BUILD_OUTPUT" | grep -E "warning [A-Z]+[0-9]+:"
           exit 1
+        else
+          echo "No warnings found - build is clean!"
         fi
 
   pack:
