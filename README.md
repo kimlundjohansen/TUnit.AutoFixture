@@ -3,6 +3,9 @@
 A streamlined, xUnit-compatible AutoFixture integration for TUnit - the modern .NET testing framework.
 
 [![Build Status](https://github.com/kimlundjohansen/TUnit.AutoFixture/workflows/CI/badge.svg)](https://github.com/kimlundjohansen/TUnit.AutoFixture/actions)
+[![NuGet](https://img.shields.io/nuget/v/TUnit.AutoFixture.svg)](https://www.nuget.org/packages/TUnit.AutoFixture/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/TUnit.AutoFixture.svg)](https://www.nuget.org/packages/TUnit.AutoFixture/)
+[![GitHub Release](https://img.shields.io/github/v/release/kimlundjohansen/TUnit.AutoFixture)](https://github.com/kimlundjohansen/TUnit.AutoFixture/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -19,6 +22,33 @@ A streamlined, xUnit-compatible AutoFixture integration for TUnit - the modern .
 |---------|-------------|-------|
 | **TUnit.AutoFixture** | Core library for auto-generating test data | [![NuGet](https://img.shields.io/nuget/v/TUnit.AutoFixture.svg)](https://www.nuget.org/packages/TUnit.AutoFixture/) |
 | **TUnit.AutoFixture.NSubstitute** | NSubstitute auto-mocking integration | [![NuGet](https://img.shields.io/nuget/v/TUnit.AutoFixture.NSubstitute.svg)](https://www.nuget.org/packages/TUnit.AutoFixture.NSubstitute/) |
+
+## Latest Release
+
+**Version 1.0.0** - Initial Stable Release (2026-01-21)
+
+### What's New in 1.0.0
+
+- ✅ **[AutoData]** attribute for automatic test data generation
+- ✅ **[InlineAutoData]** for combining explicit and auto-generated parameters
+- ✅ **[Frozen]** attribute with 5 matching strategies (ExactType, ImplementedInterfaces, DirectBaseType, BaseType, MemberOfFamily)
+- ✅ **NSubstitute integration** with [AutoNSubstituteData] and [InlineAutoNSubstituteData]
+- ✅ **xUnit-compatible naming** - seamless migration from xUnit.AutoFixture
+- ✅ **Zero warnings** - strict StyleCop and SonarAnalyzer compliance
+- ✅ **48 passing tests** - comprehensive test coverage with FluentAssertions
+- ✅ **Multi-platform CI/CD** - automated testing on Ubuntu, Windows, and macOS
+- ✅ **.NET 10.0** support
+
+### Download
+
+```bash
+dotnet add package TUnit.AutoFixture --version 1.0.0
+dotnet add package TUnit.AutoFixture.NSubstitute --version 1.0.0
+```
+
+📦 [View on NuGet](https://www.nuget.org/packages/TUnit.AutoFixture/1.0.0)
+📝 [Full Release Notes](RELEASE_NOTES.md)
+🏷️ [GitHub Release](https://github.com/kimlundjohansen/TUnit.AutoFixture/releases/tag/v1.0.0)
 
 ## Quick Start
 
