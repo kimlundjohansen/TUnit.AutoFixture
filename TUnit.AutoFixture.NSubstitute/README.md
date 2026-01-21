@@ -484,7 +484,7 @@ See the [test project](../TUnit.AutoFixture.UnitTests/Examples/) for comprehensi
 
 ## Requirements
 
-- .NET 9.0 or later
+- .NET 10.0 or later
 - TUnit.Core 1.10.0 or later
 - TUnit.AutoFixture 1.0.0 or later
 - AutoFixture.AutoNSubstitute 4.18.1 or later

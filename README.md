@@ -11,8 +11,6 @@ A streamlined, xUnit-compatible AutoFixture integration for TUnit - the modern .
 - **Seamless Migration** - Drop-in replacement for teams migrating from xUnit to TUnit
 - **Frozen Parameters** - Full support for `[Frozen]` attribute with 5 matching strategies
 - **NSubstitute Integration** - Auto-mocking with `[AutoNSubstituteData]`
-- **Simplified Architecture** - 6-8 core classes vs 20+ in official implementation
-- **Zero Warnings** - Strict StyleCop and SonarAnalyzer compliance
 - **Comprehensive Tests** - 48 passing tests demonstrating all features
 
 ## Packages
@@ -213,7 +211,7 @@ See the [test project](TUnit.AutoFixture.UnitTests/Examples/) for comprehensive 
 
 ## Requirements
 
-- .NET 9.0 or later
+- .NET 10.0 or later
 - TUnit 1.10.0 or later
 - AutoFixture 4.18.1 or later
 
