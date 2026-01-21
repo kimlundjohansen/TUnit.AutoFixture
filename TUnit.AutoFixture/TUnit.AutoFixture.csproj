@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>1573,1591,1712,CA1014,SA1633,SA1200,SA1309,SA1101,SA1210,SA1413,SA1010,SA1009,S3928,S4456</NoWarn>
+
+    <!-- NuGet Package Metadata -->
+    <PackageId>TUnit.AutoFixture</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>TUnit.AutoFixture Contributors</Authors>
+    <Company>TUnit.AutoFixture</Company>
+    <Product>TUnit.AutoFixture</Product>
+    <Description>A streamlined, xUnit-compatible AutoFixture integration for TUnit. Provides [AutoData], [InlineAutoData], and [Frozen] attributes for automatic test data generation with simplified architecture and zero warnings.</Description>
+    <PackageTags>tunit;autofixture;testing;test-data;xunit;data-generation;unit-testing</PackageTags>
+    <PackageProjectUrl>https://github.com/kimlundjohansen/TUnit.AutoFixture</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/kimlundjohansen/TUnit.AutoFixture.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>See RELEASE_NOTES.md for detailed release notes.</PackageReleaseNotes>
+    <Copyright>Copyright (c) 2026 TUnit.AutoFixture Contributors</Copyright>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TUnit.Core" Version="1.10.0" />
+    <PackageReference Include="AutoFixture" Version="4.18.1" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.4.0.108396">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
