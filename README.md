@@ -2,10 +2,10 @@
 
 A streamlined, xUnit-compatible AutoFixture integration for TUnit - the modern .NET testing framework.
 
-[![Build Status](https://github.com/kimlundjohansen/TestSuite.TUnit.AutoFixture/workflows/CI/badge.svg)](https://github.com/kimlundjohansen/TestSuite.TUnit.AutoFixture/actions)
+[![Build Status](https://github.com/kimlundjohansen/TUnit.AutoFixture/workflows/CI/badge.svg)](https://github.com/kimlundjohansen/TUnit.AutoFixture/actions)
 [![NuGet](https://img.shields.io/nuget/v/TestSuite.TUnit.AutoFixture.svg)](https://www.nuget.org/packages/TestSuite.TUnit.AutoFixture/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/TestSuite.TUnit.AutoFixture.svg)](https://www.nuget.org/packages/TestSuite.TUnit.AutoFixture/)
-[![GitHub Release](https://img.shields.io/github/v/release/kimlundjohansen/TestSuite.TUnit.AutoFixture)](https://github.com/kimlundjohansen/TestSuite.TUnit.AutoFixture/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/kimlundjohansen/TUnit.AutoFixture)](https://github.com/kimlundjohansen/TUnit.AutoFixture/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -48,7 +48,7 @@ dotnet add package TestSuite.TUnit.AutoFixture.NSubstitute --version 1.0.0
 
 📦 [View on NuGet](https://www.nuget.org/packages/TestSuite.TUnit.AutoFixture/1.0.0)
 📝 [Full Release Notes](RELEASE_NOTES.md)
-🏷️ [GitHub Release](https://github.com/kimlundjohansen/TestSuite.TUnit.AutoFixture/releases/tag/v1.0.0)
+🏷️ [GitHub Release](https://github.com/kimlundjohansen/TUnit.AutoFixture/releases/tag/v1.0.0)
 
 ## Latest Release
 
@@ -279,8 +279,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ### Building from Source
 
 ```bash
-git clone https://github.com/kimlundjohansen/TestSuite.TUnit.AutoFixture.git
-cd TestSuite.TUnit.AutoFixture
+git clone https://github.com/kimlundjohansen/TUnit.AutoFixture.git
+cd TUnit.AutoFixture
 dotnet restore
 dotnet build
 dotnet test
