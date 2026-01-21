@@ -93,13 +93,13 @@ First stable release of TUnit.AutoFixture - a streamlined, xUnit-compatible Auto
 #### TUnit.AutoFixture
 - TUnit.Core 1.10.0
 - AutoFixture 4.18.1
-- .NET 9.0
+- .NET 10.0
 
 #### TUnit.AutoFixture.NSubstitute
 - TUnit.AutoFixture 1.0.0
 - AutoFixture.AutoNSubstitute 4.18.1
 - NSubstitute 5.1.0
-- .NET 9.0
+- .NET 10.0
 
 ### Known Limitations
 
