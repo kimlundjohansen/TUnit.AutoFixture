@@ -14,14 +14,19 @@ A streamlined, xUnit-compatible AutoFixture integration for TUnit - the modern .
 - **Seamless Migration** - Drop-in replacement for teams migrating from xUnit to TUnit
 - **Frozen Parameters** - Full support for `[Frozen]` attribute with 5 matching strategies
 - **NSubstitute Integration** - Auto-mocking with `[AutoNSubstituteData]`
-- **Comprehensive Tests** - 48 passing tests demonstrating all features
+- **Immutable Collections** - Automatic support for ImmutableArray, ImmutableList, ImmutableDictionary, and more (.NET 5.0+)
+- **AutoRegister** - Automatic discovery and registration of customizations marked with `[AutoRegister]`
+- **FixtureFactory** - Centralized factory for creating configured IFixture instances
+- **Custom Generators** - Built-in generators for CancellationToken and DateOnly (.NET 6+)
+- **Comprehensive Tests** - 81 passing tests demonstrating all features
 
-## Packages
+## Package
 
 | Package | Description | NuGet |
 |---------|-------------|-------|
-| **TestSuite.TUnit.AutoFixture** | Core library for auto-generating test data | [![NuGet](https://img.shields.io/nuget/v/TestSuite.TUnit.AutoFixture.svg)](https://www.nuget.org/packages/TestSuite.TUnit.AutoFixture/) |
-| **TestSuite.TUnit.AutoFixture.NSubstitute** | NSubstitute auto-mocking integration | [![NuGet](https://img.shields.io/nuget/v/TestSuite.TUnit.AutoFixture.NSubstitute.svg)](https://www.nuget.org/packages/TestSuite.TUnit.AutoFixture.NSubstitute/) |
+| **TestSuite.TUnit.AutoFixture** | Complete library with auto-generating test data and NSubstitute auto-mocking | [![NuGet](https://img.shields.io/nuget/v/TestSuite.TUnit.AutoFixture.svg)](https://www.nuget.org/packages/TestSuite.TUnit.AutoFixture/) |
+
+**All features in one package** - No need to install separate packages for NSubstitute support!
 
 ## Latest Release
 
@@ -42,8 +47,8 @@ A streamlined, xUnit-compatible AutoFixture integration for TUnit - the modern .
 ### Download
 
 ```bash
-dotnet add package TestSuite.TUnit.AutoFixture --version 1.0.0
-dotnet add package TestSuite.TUnit.AutoFixture.NSubstitute --version 1.0.0
+# Single package with all features included
+dotnet add package TestSuite.TUnit.AutoFixture --version 1.0.1
 ```
 
 📦 [View on NuGet](https://www.nuget.org/packages/TestSuite.TUnit.AutoFixture/1.0.0)
@@ -66,27 +71,13 @@ dotnet add package TestSuite.TUnit.AutoFixture.NSubstitute --version 1.0.0
 - ✅ **Multi-platform CI/CD** - automated testing on Ubuntu, Windows, and macOS
 - ✅ **.NET 10.0** support
 
-### Download
-
-```bash
-dotnet add package TUnit.AutoFixture --version 1.0.0
-dotnet add package TUnit.AutoFixture.NSubstitute --version 1.0.0
-```
-
-📦 [View on NuGet](https://www.nuget.org/packages/TUnit.AutoFixture/1.0.0)
-📝 [Full Release Notes](RELEASE_NOTES.md)
-🏷️ [GitHub Release](https://github.com/kimlundjohansen/TUnit.AutoFixture/releases/tag/v1.0.0)
-
 ## Quick Start
 
 ### Installation
 
 ```bash
-# Core library
+# Single package with all features (AutoFixture + NSubstitute)
 dotnet add package TestSuite.TUnit.AutoFixture
-
-# With NSubstitute support
-dotnet add package TestSuite.TUnit.AutoFixture.NSubstitute
 ```
 
 ### Basic Usage
@@ -136,7 +127,7 @@ public class MyTests
 ### With NSubstitute
 
 ```csharp
-using TestSuite.TUnit.AutoFixture.NSubstitute;
+using TestSuite.TUnit.AutoFixture;
 using TUnit.Core;
 using NSubstitute;
 
@@ -159,10 +150,70 @@ public class MyMockTests
 }
 ```
 
+### Using FixtureFactory Directly
+
+You can use the FixtureFactory to create configured IFixture instances directly in your code:
+
+```csharp
+using AutoFixture;
+using TestSuite.TUnit.AutoFixture;
+
+public class MyTests
+{
+    [Test]
+    public void Test_DirectFixtureUsage()
+    {
+        // Create a configured fixture instance
+        var fixture = FixtureFactory.Create();
+
+        // Generate test data
+        var person = fixture.Create<Person>();
+        var numbers = fixture.CreateMany<int>(5);
+
+        // All AutoRegister customizations are automatically applied
+        person.Should().NotBeNull();
+        numbers.Should().HaveCount(5);
+    }
+}
+```
+
+For NSubstitute-enabled fixtures:
+
+```csharp
+using AutoFixture;
+using TestSuite.TUnit.AutoFixture;
+
+public class MyTests
+{
+    [Test]
+    public void Test_DirectNSubstituteFixtureUsage()
+    {
+        // Create a fixture with NSubstitute auto-mocking
+        var fixture = FixtureFactory.CreateWithNSubstitute();
+
+        // Generate mocked interfaces and configured objects
+        var service = fixture.Create<IService>();
+        var consumer = fixture.Freeze<Consumer>();
+
+        service.GetData().Returns("test");
+        consumer.GetServiceData().Should().Be("test");
+    }
+}
+```
+
+The FixtureFactory provides:
+- ✅ **Centralized Configuration** - All customizations in one place
+- ✅ **AutoRegister Support** - Automatically applies [AutoRegister] marked customizations
+- ✅ **Immutable Collections** - Built-in support for ImmutableArray, ImmutableList, etc. (.NET 5.0+)
+- ✅ **Consistent Behavior** - Same configuration across all test attributes
+
 ## Documentation
 
-- **[TestSuite.TUnit.AutoFixture Documentation](TestSuite.TUnit.AutoFixture/README.md)** - Core library usage guide
-- **[TestSuite.TUnit.AutoFixture.NSubstitute Documentation](TestSuite.TUnit.AutoFixture.NSubstitute/README.md)** - NSubstitute integration guide
+- **[TestSuite.TUnit.AutoFixture Documentation](TestSuite.TUnit.AutoFixture/README.md)** - Complete library usage guide
+- **[AutoRegister Feature](AUTOREGISTER_FEATURE.md)** - Automatic customization discovery
+- **[FixtureFactory Feature](FIXTUREFACTORY_FEATURE.md)** - Centralized fixture configuration
+- **[Generators Feature](GENERATORS_FEATURE.md)** - Built-in generators for CancellationToken and DateOnly
+- **[Immutable Collections Feature](IMMUTABLE_COLLECTIONS_FEATURE.md)** - Immutable collection support (.NET 5.0+)
 - **[Release Notes](RELEASE_NOTES.md)** - Version history and changes
 
 ## Why TestSuite.TUnit.AutoFixture?
@@ -265,6 +316,10 @@ See the [test project](TestSuite.TUnit.AutoFixture.UnitTests/Examples/) for comp
 - **[FrozenDependencyTests.cs](TestSuite.TUnit.AutoFixture.UnitTests/Examples/FrozenDependencyTests.cs)** - All 5 matching strategies
 - **[InlineAutoDataTests.cs](TestSuite.TUnit.AutoFixture.UnitTests/Examples/InlineAutoDataTests.cs)** - Hybrid explicit/auto data
 - **[AutoNSubstituteTests.cs](TestSuite.TUnit.AutoFixture.UnitTests/Examples/AutoNSubstituteTests.cs)** - Auto-mocking scenarios
+- **[ImmutableCollectionTests.cs](TestSuite.TUnit.AutoFixture.UnitTests/Examples/ImmutableCollectionTests.cs)** - Immutable collection support (.NET 5.0+)
+- **[AutoRegisterTests.cs](TestSuite.TUnit.AutoFixture.UnitTests/Examples/AutoRegisterTests.cs)** - Custom customization auto-registration
+- **[FixtureFactoryTests.cs](TestSuite.TUnit.AutoFixture.UnitTests/Examples/FixtureFactoryTests.cs)** - Direct FixtureFactory usage
+- **[NSubstituteFixtureFactoryTests.cs](TestSuite.TUnit.AutoFixture.UnitTests/Examples/NSubstituteFixtureFactoryTests.cs)** - NSubstitute FixtureFactory usage
 
 ## Requirements
 

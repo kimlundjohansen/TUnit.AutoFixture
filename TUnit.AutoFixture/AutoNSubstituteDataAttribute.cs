@@ -1,7 +1,4 @@
-using AutoFixture;
-using AutoFixture.AutoNSubstitute;
-
-namespace TUnit.AutoFixture.NSubstitute;
+namespace TUnit.AutoFixture;
 
 /// <summary>
 /// Provides auto-generated test data using AutoFixture with NSubstitute auto-mocking.
@@ -49,25 +46,7 @@ public class AutoNSubstituteDataAttribute : AutoDataAttribute
     /// with NSubstitute auto-mocking enabled.
     /// </summary>
     public AutoNSubstituteDataAttribute()
-        : base(CreateFixtureWithNSubstitute)
+        : base(FixtureFactory.CreateWithNSubstitute)
     {
-    }
-
-    /// <summary>
-    /// Creates an AutoFixture instance configured with NSubstitute auto-mocking.
-    /// </summary>
-    /// <returns>
-    /// An IFixture instance customized with AutoNSubstituteCustomization.
-    /// </returns>
-    private static IFixture CreateFixtureWithNSubstitute()
-    {
-        var fixture = new Fixture();
-        fixture.Customize(new AutoNSubstituteCustomization
-        {
-            // Configure all mocks to use CallBase = false by default
-            // This means mocks won't try to call base class implementations
-            ConfigureMembers = false,
-        });
-        return fixture;
     }
 }
