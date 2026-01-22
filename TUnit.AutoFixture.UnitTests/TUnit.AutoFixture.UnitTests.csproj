@@ -27,7 +27,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TUnit.AutoFixture\TUnit.AutoFixture.csproj" />
-    <ProjectReference Include="..\TUnit.AutoFixture.NSubstitute\TUnit.AutoFixture.NSubstitute.csproj" />
   </ItemGroup>
 
 </Project>

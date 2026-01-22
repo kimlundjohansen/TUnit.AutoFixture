@@ -1,5 +1,4 @@
 <Solution>
   <Project Path="TUnit.AutoFixture/TUnit.AutoFixture.csproj" />
-  <Project Path="TUnit.AutoFixture.NSubstitute/TUnit.AutoFixture.NSubstitute.csproj" />
   <Project Path="TUnit.AutoFixture.UnitTests/TUnit.AutoFixture.UnitTests.csproj" />
 </Solution>

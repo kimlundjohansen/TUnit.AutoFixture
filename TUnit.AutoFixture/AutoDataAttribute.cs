@@ -1,4 +1,5 @@
 using AutoFixture;
+using TUnit.AutoFixture.Customizations;
 using TUnit.AutoFixture.Internal;
 
 namespace TUnit.AutoFixture;
@@ -55,7 +56,7 @@ public class AutoDataAttribute : UntypedDataSourceGeneratorAttribute
     /// with the default AutoFixture configuration.
     /// </summary>
     public AutoDataAttribute()
-        : this(() => new Fixture())
+        : this(FixtureFactory.Create)
     {
     }
 

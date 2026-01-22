@@ -1,7 +1,6 @@
 using FluentAssertions;
 using Poc.UnitTests.Infrastructure;
 using TUnit.AutoFixture;
-using TUnit.AutoFixture.NSubstitute;
 using TUnit.Core;
 
 namespace Poc.UnitTests.Examples;
